@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
-
 export default class PersonBuilder {
   private name!: string;
   private email!: string;

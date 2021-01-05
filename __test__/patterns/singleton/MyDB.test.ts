@@ -1,4 +1,4 @@
-import MyDB from "../../src/padroes/singleton/MyDB";
+import MyDB from "../../../src/patterns/singleton/MyDB";
 
 describe("Singleton MyDB", () => {
   it("Deve criar apenas uma instancia de MyDB", () => {

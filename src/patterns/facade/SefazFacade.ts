@@ -4,14 +4,13 @@ import Soap from "./Soap";
 export default class SefazFacade {
   private invoice: Invoice;
   private soap: Soap;
-  constructor(invoice: Invoice, soap: Soap) {
-    this.invoice = invoice;
-    this.soap = soap;
+  constructor() {
+    this.invoice = new Invoice();
+    this.soap = new Soap();
   }
   generateXmlFinal(): string {
-    const fieldValue = this.invoice.generateFieldValue();
-    const fieldDate = this.invoice.generateFieldDate();
-    const finalXml = this.soap.generateSoap(`${fieldValue}${fieldDate}`);
+    const invoiceXml = this.invoice.generateInvoice();
+    const finalXml = this.soap.generateSoap(invoiceXml);
     return finalXml;
   }
 }
